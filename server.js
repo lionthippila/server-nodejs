@@ -3,6 +3,14 @@ const app = express();
 const PORT = 3000;
 
 // Endpoint to get players data from both URLs
+app.get('/', async (req, res) => {
+    res.json({
+        message: "Hello TEST"
+    })
+});
+
+
+// Endpoint to get players data from both URLs
 app.get('/players', async (req, res) => {
     const urls = [
         'http://89.38.101.78:30120/players.json', // Sakura Town
@@ -85,5 +93,6 @@ app.get('/players', async (req, res) => {
 
 // Start the server and listen on the specified port
 app.listen(PORT, () => {
-    console.log(`Proxy server running at http://localhost:${PORT}`);
+    // console.log(`Proxy server running at http://localhost:${PORT}`);
+    console.log(`Proxy server running at ${PORT}`);
 });
